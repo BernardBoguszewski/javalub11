@@ -13,7 +13,7 @@ public class SquareBracketsTest {
         String brackets = "[[[]]][]";
 
         //when
-        Boolean result = squareBrackets.isClosed(brackets);
+        boolean result = squareBrackets.isClosed(brackets);
 
         //then
         assertTrue(result);
