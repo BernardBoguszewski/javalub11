@@ -34,6 +34,18 @@ public class GreetingsTest {
         assertEquals("Witaj, mój przyjacielu", result);
     }
 
+    @Test
+    public void testShouldReturnOnlyBigLetters(){
+        //given
+        Greetings greetings = new Greetings();
+        String name = "ADAM";
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("WITAJ, " + name, result);
+    }
 
 
 
