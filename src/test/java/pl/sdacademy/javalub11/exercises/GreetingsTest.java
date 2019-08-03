@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 public class GreetingsTest {
 
     @Test
-    public void testShouldReturnProperGreeting() {
+    public void testShouldReturnProperGreeting() { //wymaganie 1
         //given
         Greetings greetings = new Greetings();
         String name = "Adam";
@@ -21,10 +21,10 @@ public class GreetingsTest {
     }
 
     @Test
-    public void testShouldReturnProperGreetingForNull() {
+    public void testShouldReturnProperGreetingForNull() { //wymaganie 2
         //given
         Greetings greetings = new Greetings();
-        String name=null;
+        String name = null;
 
         //when
         String result = greetings.greet(name);
@@ -35,16 +35,17 @@ public class GreetingsTest {
     }
 
     @Test
-    public void testShouldReturnProperGreetingUpperCase() {
+    public void testShouldReturnProperGreetingUpperCase() { //wymaganie 3
         //given
         Greetings greetings = new Greetings();
-        String name="ADAM";
+        String name = "ADAM";
 
         //when
         String result = greetings.greet(name);
 
         //then
-        assertEquals("Witaj, ADAM", result);
+        assertEquals("WITAJ, ADAM", result);
     }
+
 
 }
