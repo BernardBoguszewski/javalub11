@@ -8,12 +8,13 @@ public class Greetings {
             return "Witaj, mój przyjacielu!";
         } else if (name == name.toUpperCase()) {
             return "WITAJ " + name + "!";
-        } else if (name.contains(",")){
+        } else if (name.contains(",")) {
             String splitName[] = name.split(",");
             String splitName1 = splitName[0];
             String splitName2 = splitName[1];
             return "Witaj, " + splitName1 + " i " + splitName2;
-        }else{}
-            return "Witaj, " + name;
+        } else {
+        }
+        return "Witaj, " + name;
     }
 }
