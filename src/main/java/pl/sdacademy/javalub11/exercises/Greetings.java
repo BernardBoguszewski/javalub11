@@ -8,8 +8,7 @@ public class Greetings {
     return name.equals(name.toUpperCase());
   }
 
-  public int countUpper(String name)
-  {
+  public int countUpper(String name) {
     int result = 0;
 
     String[] names = name.split("\\,");
@@ -20,6 +19,24 @@ public class Greetings {
 
     return result;
   }
+
+    public boolean isDigitInString(String name)
+    {
+        for (int i = 0; i < name.length(); i++) {
+            if(Character.isDigit(name.charAt(i)))
+                return true;
+        }
+        return false;
+    }
+
+    private String addSeparator(int index, int amount)
+    {
+        if (index == (amount - 1)) {
+            return  " i ";
+        } else {
+            return  ", ";
+        }
+    }
 
   private String processNames(String name) {
     String resultLeft = "";
@@ -35,66 +52,60 @@ public class Greetings {
 
     for (String s : names) {
 
+      String trimedString = s.trim();
+
       if (isUpper(s)) {
+
         if (indexRight > 0) {
-          if (indexRight == (namesRightAmount - 1)) {
-            resultRight += " i ";
-          } else {
-            resultRight += ", ";
-          }
+          resultRight += addSeparator(indexRight, namesRightAmount);
         }
-        resultRight += s.trim();
+
+        resultRight += trimedString;
         indexRight++;
 
       } else {
 
         if (indexLeft > 0) {
-          if (indexLeft == (namesLeftAmount - 1)) {
-            resultLeft += " i ";
-          } else {
-            resultLeft += ", ";
-          }
+            resultLeft += addSeparator(indexLeft, namesLeftAmount);
         }
-        resultLeft += s.trim();
 
+        resultLeft += trimedString;
         indexLeft++;
+
       }
     }
 
-    //System.out.println("In test: left='" + resultLeft + "' right='" + resultRight + "'");
-
-    if (resultLeft.length() > 0)
-    {
+    if (resultLeft.length() > 0) {
       if (indexLeft > 1) {
         resultLeft += ", witajcie!";
-      }else{
+      } else {
         resultLeft = "Witaj, " + resultLeft;
       }
     }
 
-    if (resultRight.length() > 0)
-    {
-      if (indexRight > 1)
-      {
+    /* Proper prefix (for right part) not defined in requirement list */
+    if (resultRight.length() > 0) {
+      if (indexRight > 1) {
         resultRight = "WITAJCIE " + resultRight + "!";
       } else {
         resultRight = "WITAJ " + resultRight + "!";
       }
     }
 
+    /* Just when we have two strings occurrence we should add seperator (space) between them */
     String separator = "";
-    if((resultLeft.length() > 0) && (resultRight.length() > 0))
-      separator = " ";
+    if ((resultLeft.length() > 0) && (resultRight.length() > 0)) separator = " ";
 
     return resultLeft + separator + resultRight;
   }
 
   public String greet(String name) {
-    String result = "Witaj, mój przyjacielu";
+    if (name == null)
+        return "Witaj, mój przyjacielu";
 
-    if (name == null) return result;
+    if(isDigitInString(name))
+        return "Z liczbami sie nie witam.";
 
-    result = processNames(name);
-    return result;
+    return processNames(name);
   }
 }

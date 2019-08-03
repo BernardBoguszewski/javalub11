@@ -7,7 +7,37 @@ import static org.junit.Assert.*;
 public class GreetingsTest {
 
   @Test
-  public void testCountUpperWithOutProperName()
+  public void testShouldReturnTrueForStringWithDigit()
+  {
+    Greetings greetings = new Greetings();
+
+    //given
+    String name = "AA5DDD";
+
+    //when
+    boolean result = greetings.isDigitInString(name);
+
+    //then
+    assertEquals(true, result);
+  }
+
+  @Test
+  public void testShouldReturnFalseForStringWithoutDigit()
+  {
+    Greetings greetings = new Greetings();
+
+    //given
+    String name = "AADDD";
+
+    //when
+    boolean result = greetings.isDigitInString(name);
+
+    //then
+    assertEquals(false, result);
+  }
+
+  @Test
+  public void testShouldCorectlyCountsExsistanceOfUpperCaseOccurence()
   {
     Greetings greetings = new Greetings();
 
@@ -22,7 +52,7 @@ public class GreetingsTest {
   }
 
   @Test
-  public void testCountUpperWithProperName()
+  public void testShouldCorectlyCountsExsistanceOfUpperCaseOccurenceInStringWithUpperName()
   {
     Greetings greetings = new Greetings();
 
@@ -37,7 +67,7 @@ public class GreetingsTest {
   }
 
   @Test
-  public void testCountUpperWithAndWithOutProperName()
+  public void testShouldCorectlyCountsExsistanceOfUpperCaseOccurenceInStringWithUpperAndWithOut()
   {
     Greetings greetings = new Greetings();
 
@@ -50,8 +80,9 @@ public class GreetingsTest {
     //then
     assertEquals(1, count);
   }
+
   @Test
-  public void testCountUpperWithProperNameRepeatedTwice()
+  public void testShouldCorreclyCountUpperNamesInStringWithUpperNameRepeatedTwice()
   {
     Greetings greetings = new Greetings();
 
@@ -177,7 +208,6 @@ public class GreetingsTest {
     assertEquals("WITAJCIE AA, BB, CC i DD!", result);
   }
 
-
   /* requirement 6 */
   @Test
   public void testShouldCheckIfMehodWorksForDifferentUpperCaseNames() {
@@ -190,5 +220,19 @@ public class GreetingsTest {
 
     // then
     assertEquals("Adam i Iza, witajcie! WITAJ ROBERT!", result);
+  }
+
+  /* requirement 7 */
+  @Test
+  public void testShouldCheckIfMehodRefuseWorkWithNamesRepeatedByNumbers() {
+    // given
+    Greetings greetings = new Greetings();
+    String name = "Adam, Iza, ROBE8RT";
+
+    // when
+    String result = greetings.greet(name);
+
+    // then
+    assertEquals("Z liczbami sie nie witam.", result);
   }
 }
