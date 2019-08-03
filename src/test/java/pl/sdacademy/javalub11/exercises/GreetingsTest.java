@@ -56,4 +56,17 @@ public class GreetingsTest {
         //then
         assertEquals("Adam i Iza, witajcie!", result);
     }
+
+    @Test
+    public void testShouldReturnGreetingsforThreeNamesIfTheyWasGeivenAfterTheComma(){
+        //given
+        Greetings greetings = new Greetings();
+        String names = "Adam,Iza,Robert";
+
+        //when
+        String result = greetings.greet(names);
+
+        //then
+        assertEquals("Adam, Iza i Robert, witajcie!", result);
+    }
 }
