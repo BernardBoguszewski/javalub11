@@ -44,4 +44,31 @@ public class GreetingsTest {
         //then
         assertEquals("Witaj, mój przyjacielu" , result);
     }
+
+    @Test
+    public void testShouldUpperCaseGreetingPrefixOnceParamIsUpperCaseTooFirstCase() {
+        //given
+        Greetings greetings = new Greetings();
+        String name = "ADAM";
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("WITAJ, ADAM!" , result);
+    }
+
+    @Test
+    public void testShouldUpperCaseGreetingPrefixOnceParamIsUpperCaseTooSecondCase() {
+        //given
+        Greetings greetings = new Greetings();
+        String name = "TOMEK";
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("WITAJ, TOMEK!" , result);
+    }
+
 }
