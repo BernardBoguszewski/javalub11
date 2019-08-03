@@ -20,5 +20,31 @@ public class GreetingsTest {
 
     }
 
+    @Test
+    public void testShouldReturnProperGreetingForNull() {
+        //given
+        Greetings greetings = new Greetings();
+        String name=null;
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Witaj, mój przyjcielu", result);
+
+    }
+
+    @Test
+    public void testShouldReturnProperGreetingUpperCase() {
+        //given
+        Greetings greetings = new Greetings();
+        String name="ADAM";
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Witaj, ADAM", result);
+    }
 
 }
