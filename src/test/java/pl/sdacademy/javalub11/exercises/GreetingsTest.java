@@ -22,7 +22,7 @@ public class GreetingsTest {
 
 
     @Test
-    public void ifWeHaveNullReturnGreeting(){
+    public void testShouldReturnWhenWeHaveNull(){
         //given
         Greetings greetings = new Greetings();
         String name = null;
