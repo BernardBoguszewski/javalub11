@@ -8,5 +8,10 @@ public class TestGreetings {
 
         System.out.println(greetings.greet("Adam"));
         System.out.println(greetings.greet(null));
+        System.out.println(greetings.greet("WITEK"));
+        System.out.println(greetings.greet("Adam,Ela"));
+
+
+        //System.out.println(greetings.commaCounting("tekst z, przecinkiem jednym, i drugim"));
     }
 }
