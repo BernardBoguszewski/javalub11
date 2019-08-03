@@ -1,6 +1,7 @@
 package pl.sdacademy.javalub11.exercises;
 
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class FizzBuzzWhizzTest {
@@ -20,7 +21,7 @@ public class FizzBuzzWhizzTest {
     }
 
     @Test
-    public void testShouldReturnSpecifiedStringWhenDigitParameterIsDividedByThree() {
+    public void testShouldReturnSpecifiedStringWhenDigitParameterIsDividedByThreeAndNotByFive() {
 
         //given
         FizzBuzzWhizz fizzBuzzWhizz = new FizzBuzzWhizz();
@@ -31,5 +32,19 @@ public class FizzBuzzWhizzTest {
 
         //then
         assertEquals("Fizz", result);
+    }
+
+    @Test
+    public void testShouldReturnSpecifiedStringWhenDigitParameterIsDividedByFiveAndNotByThree() {
+
+        //given
+        FizzBuzzWhizz fizzBuzzWhizz = new FizzBuzzWhizz();
+        int digit = 10;
+
+        //when
+        String result = fizzBuzzWhizz.fizzBuzzWhizz(digit);
+
+        //then
+        assertEquals("Buzz", result);
     }
 }

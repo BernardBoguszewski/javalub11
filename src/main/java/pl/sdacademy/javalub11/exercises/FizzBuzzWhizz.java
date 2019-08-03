@@ -13,6 +13,10 @@ public class FizzBuzzWhizz {
             result.append("Fizz");
         }
 
+        if (digit % 5 == 0) {
+            result.append("Buzz");
+        }
+
         return result.toString();
     }
 }
