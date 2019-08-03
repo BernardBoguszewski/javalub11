@@ -27,7 +27,6 @@ public class GreetingsTest {
         assertEquals("Witaj, " + name, result);
     }
 
-
     @Test
     public void testShouldCheckProtectionAgainstNullValue() {
         //given
