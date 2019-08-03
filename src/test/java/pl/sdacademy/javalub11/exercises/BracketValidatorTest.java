@@ -105,7 +105,6 @@ public class BracketValidatorTest {
         assertEquals(false, result);
     }
 
-
     @Test
     public void testShouldReturnTrueForProperNestedBracketsSecondCase() {
         // given
@@ -119,6 +118,4 @@ public class BracketValidatorTest {
         // then
         assertEquals(true, result);
     }
-
-
 }
