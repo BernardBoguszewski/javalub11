@@ -34,4 +34,18 @@ public class GreetingsTest {
 
     }
 
+    @Test
+    public void testShouldReturnProperGreetingToUppearName() {
+        //given
+        Greetings greetings = new Greetings();
+        String name = "Adam";
+
+        //when
+        String result = greetings.greet(name.toUpperCase());
+
+        //then
+        assertEquals("WITAJ ADAM", result);
+
+    }
+
 }

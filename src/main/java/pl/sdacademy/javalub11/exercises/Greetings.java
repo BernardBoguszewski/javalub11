@@ -5,7 +5,11 @@ public class Greetings {
     public String greet(String name) {
         if (name == null) {
             return "Witaj moj przyjacielu";
-        } else {
+        }
+        if(name==name.toUpperCase()){
+            return "WITAJ "+name.toUpperCase();
+        }
+        else {
             return "Witaj, " + name;
         }
 
