@@ -31,4 +31,17 @@ public class GreetingsTest {
         //then
         assertEquals("Witaj, mój przyjacielu", result);
     }
+
+    @Test
+    public void testShouldReturnCapitalizedStringIfParameterNameIsCapitalized(){
+        //given
+        Greetings greetings = new Greetings();
+
+        //when
+        String name = "ADAM";
+        String result = greetings.greet(name);
+
+
+        assertEquals("WITAJ ADAM", result);
+    }
 }
