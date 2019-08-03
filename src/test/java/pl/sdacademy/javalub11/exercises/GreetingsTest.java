@@ -52,4 +52,15 @@ public class GreetingsTest {
         //then
         assertEquals("Adam i Ewa, witajcie!",result);
     }
+
+    @Test
+    public void testShouldReturnStringWithTreeName() {
+        //given
+        Greetings greetings = new Greetings();
+        String name = "Adam,Iza,Robert";
+        //when
+        String result = greetings.greet(name);
+        //then
+        assertEquals("Adam,Iza i Robert, witajcie!",result);
+    }
 }
