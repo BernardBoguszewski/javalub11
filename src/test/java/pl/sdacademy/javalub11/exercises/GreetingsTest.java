@@ -25,12 +25,19 @@ public class GreetingsTest {
 
         //then
         assertEquals("Witaj, " + name, result);
-
-
-
-
-
     }
 
 
+    @Test
+    public void testShouldCheckProtectionAgainstNullValue() {
+        //given
+        Greetings greetings = new Greetings();
+        String name = null;
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Witaj, mój przyjacielu" , result);
+    }
 }
