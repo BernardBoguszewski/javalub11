@@ -6,7 +6,11 @@ public class FizzBuzzWhizz {
         StringBuilder result = new StringBuilder();
 
         if (digit == 0) {
-            result.append("Nie dla zer!");
+            return "Nie dla zer!";
+        }
+
+        if (digit % 3 == 0) {
+            result.append("Fizz");
         }
 
         return result.toString();

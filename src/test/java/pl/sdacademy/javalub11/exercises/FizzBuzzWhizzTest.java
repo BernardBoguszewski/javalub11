@@ -18,4 +18,18 @@ public class FizzBuzzWhizzTest {
         //then
         assertEquals("Nie dla zer!", result);
     }
+
+    @Test
+    public void testShouldReturnSpecifiedStringWhenDigitParameterIsDividedByThree() {
+
+        //given
+        FizzBuzzWhizz fizzBuzzWhizz = new FizzBuzzWhizz();
+        int digit = 12;
+
+        //when
+        String result = fizzBuzzWhizz.fizzBuzzWhizz(digit);
+
+        //then
+        assertEquals("Fizz", result);
+    }
 }
