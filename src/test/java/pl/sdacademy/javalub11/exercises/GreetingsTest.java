@@ -17,11 +17,16 @@ public class GreetingsTest {
 
         //then
         assertEquals("Witaj, " + name, result);
+    }
 
-        name = "Łukasz";
+    @Test
+    public void testShouldReturnProperGreetingforSecondCase() {
+        //given
+        Greetings greetings = new Greetings();
+        String name = "Łukasz";
 
         //when
-        result = greetings.greet(name);
+        String result = greetings.greet(name);
 
         //then
         assertEquals("Witaj, " + name, result);
