@@ -18,6 +18,18 @@ public class GreetingsTest {
         //then
         assertEquals("Witaj, " + name, result);
 
+        name = "Łukasz";
+
+        //when
+        result = greetings.greet(name);
+
+        //then
+        assertEquals("Witaj, " + name, result);
+
+
+
+
+
     }
 
 
