@@ -47,4 +47,18 @@ public class FizzBuzzWhizzTest {
         //then
         assertEquals("Buzz", result);
     }
+
+    @Test
+    public void testShouldReturnSpecifiedStringWhenDigitParameterIsDividedByFiveAndThree() {
+
+        //given
+        FizzBuzzWhizz fizzBuzzWhizz = new FizzBuzzWhizz();
+        int digit = 15;
+
+        //when
+        String result = fizzBuzzWhizz.fizzBuzzWhizz(digit);
+
+        //then
+        assertEquals("FizzBuzz", result);
+    }
 }
