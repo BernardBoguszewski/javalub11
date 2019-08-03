@@ -7,6 +7,11 @@ public class Greetings {
     public String greet(String name) {
 
         if (name != null) {
+
+            if(name.matches(".*\\d.*")){
+                return "Z liczbami się nie witam.";
+            }
+
             if (name.toUpperCase().equals(name)) {
                 String greetings = "Witaj " + name;
                 return greetings.toUpperCase();

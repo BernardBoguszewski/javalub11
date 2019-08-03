@@ -82,4 +82,17 @@ public class GreetingsTest {
         //then
         assertEquals("Adam, Iza i Robert, witajcie! WITAJ MARIUSZ!", result);
     }
+
+    @Test
+    public void testShouldReturnSpecialStringWhenNameContainsNumbers(){
+        //given
+        Greetings greetings = new Greetings();
+        String name = "Adam1234";
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Z liczbami się nie witam.", result);
+    }
 }
