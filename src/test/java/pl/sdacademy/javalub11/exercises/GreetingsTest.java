@@ -22,7 +22,7 @@ public class GreetingsTest {
 
 
     @Test
-    public void testShouldReturnWhenWeHaveNull(){
+    public void testShouldReturnWhenWeHaveNull() {
         //given
         Greetings greetings = new Greetings();
         String name = null;
@@ -35,7 +35,7 @@ public class GreetingsTest {
     }
 
     @Test
-    public void testShouldReturnOnlyBigLetters(){
+    public void testShouldReturnOnlyBigLetters() {
         //given
         Greetings greetings = new Greetings();
         String name = "ADAM";
@@ -47,6 +47,16 @@ public class GreetingsTest {
         assertEquals("WITAJ, " + name, result);
     }
 
+    @Test
+    public void testShouldReturnTwoNames() {
+        //given
+        Greetings greetings = new Greetings();
+        String name = "Adam,Iza";
 
+        //when
+        String result = greetings.greet(name);
 
+        //then
+        assertEquals("Adam i Iza witajcie!", result);
+    }
 }
