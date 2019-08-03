@@ -6,4 +6,8 @@ public class Greetings {
         return "Witaj, " + name;
     }
 
+    public String greetNull(String name) {
+        return "Witaj, mój przyjacielu";
+    }
+
 }

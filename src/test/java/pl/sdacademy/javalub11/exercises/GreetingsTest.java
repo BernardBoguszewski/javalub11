@@ -21,4 +21,18 @@ public class GreetingsTest {
     }
 
 
+    @Test
+    public void ifWeHaveNullReturnGreeting(){
+        //given
+        Greetings greetings = new Greetings();
+        String name = null;
+
+        //when
+        String result = greetings.greetNull(null);
+
+        //then
+        assertEquals("Witaj, mój przyjacielu", result);
+    }
+
+
 }
