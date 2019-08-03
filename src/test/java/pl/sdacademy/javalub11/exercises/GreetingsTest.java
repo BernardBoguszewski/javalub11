@@ -17,7 +17,6 @@ public class GreetingsTest {
 
         //then
         assertEquals("Witaj, " + name, result);
-
     }
 
     @Test
@@ -36,12 +35,25 @@ public class GreetingsTest {
     public void testShouldReturnCapitalizedStringIfParameterNameIsCapitalized(){
         //given
         Greetings greetings = new Greetings();
+        String name = "ADAM";
 
         //when
-        String name = "ADAM";
         String result = greetings.greet(name);
 
-
+        //then
         assertEquals("WITAJ ADAM", result);
+    }
+
+    @Test
+    public void testShouldReturnGreetingsforTwoNamesIfTheyWasGeivenAfterTheComma(){
+        //given
+        Greetings greetings = new Greetings();
+        String names = "Adam,Iza";
+
+        //when
+        String result = greetings.greet(names);
+
+        //then
+        assertEquals("Adam i Iza, witajcie!", result);
     }
 }
