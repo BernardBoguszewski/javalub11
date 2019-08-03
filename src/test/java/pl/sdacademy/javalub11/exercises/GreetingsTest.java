@@ -25,13 +25,20 @@ public class GreetingsTest {
         //given
         Greetings greetings = new Greetings();
         String name = null;
-
         //when
         String result = greetings.greet(name);
-
-//then
+        //then
         assertEquals("Witaj moj przyjacielu", result);
     }
 
-
+    @Test
+    public void TestUpperCaseName() {
+        //given
+        Greetings greetings = new Greetings();
+        String name ="ADAM";
+        //when
+        String result = greetings.greet(name);
+        //then
+        assertEquals("WITAJ ADAM",result);
+    }
 }
