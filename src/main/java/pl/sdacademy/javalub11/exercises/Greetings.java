@@ -1,9 +1,10 @@
 package pl.sdacademy.javalub11.exercises;
 
+import java.util.ArrayList;
+
 public class Greetings {
 
     public String greet(String name) {
-
 
         if (name != null) {
             if (name.toUpperCase().equals(name)) {
@@ -26,23 +27,39 @@ public class Greetings {
     private String createGreetingsStringFromNamesList(String names) {
 
         String[] namesArray = names.split(",");
-        String greetings = "";
 
-        greetings += namesArray[0];
+        ArrayList upperCaseNames = new ArrayList();
+        ArrayList lowerCaseNames = new ArrayList();
 
-        for (int i = 1; i < namesArray.length; ++i) {
-
-            if (i <= namesArray.length - 2) {
-                greetings += ", ";
+        for(String name: namesArray){
+            if(name.toUpperCase().equals(name)){
+                upperCaseNames.add(name);
+            } else {
+                lowerCaseNames.add(name);
             }
-            if (i == namesArray.length - 1) {
-                greetings += " i ";
-            }
-            greetings += namesArray[i];
         }
-        greetings += ", witajcie!";
 
-        return greetings;
+        StringBuilder greetings = new StringBuilder(namesArray[0]);
+
+        for (int i = 1; i < lowerCaseNames.size(); ++i) {
+
+            if (i <= lowerCaseNames.size() - 2) {
+                greetings.append(", ");
+            }
+            if (i == lowerCaseNames.size() - 1) {
+                greetings.append(" i ");
+            }
+            greetings.append(lowerCaseNames.get(i));
+        }
+
+        greetings.append(", witajcie!");
+
+        String uppgerGreatings = "";
+        if(upperCaseNames.size() > 0){
+            uppgerGreatings += " WITAJ " + upperCaseNames.get(0) + "!";
+        }
+
+        return greetings+uppgerGreatings;
     }
 
 }

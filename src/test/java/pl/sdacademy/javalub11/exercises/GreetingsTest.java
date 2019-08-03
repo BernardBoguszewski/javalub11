@@ -69,4 +69,17 @@ public class GreetingsTest {
         //then
         assertEquals("Adam, Iza i Robert, witajcie!", result);
     }
+
+    @Test
+    public void testShouldReturnSpecialGreetingsForNameWhichInNamesListIsWrittenUpperCases(){
+        //given
+        Greetings greetings = new Greetings();
+        String names = "Adam,Iza,Robert,MARIUSZ";
+
+        //when
+        String result = greetings.greet(names);
+
+        //then
+        assertEquals("Adam, Iza i Robert, witajcie! WITAJ MARIUSZ!", result);
+    }
 }
