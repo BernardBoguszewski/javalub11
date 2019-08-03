@@ -28,11 +28,13 @@ public class GreetingsTest {
         String name = null;
 
         //when
-        String result = greetings.greetNull(null);
+        String result = greetings.greet(null);
 
         //then
         assertEquals("Witaj, mój przyjacielu", result);
     }
+
+
 
 
 }
