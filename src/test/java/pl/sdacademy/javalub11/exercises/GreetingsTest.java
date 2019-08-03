@@ -20,5 +20,18 @@ public class GreetingsTest {
 
     }
 
+    @Test
+    public void testShouldReturnProperGreetingNull() {
+        //given
+        Greetings greetings = new Greetings();
+        String name = null;
+
+        //when
+        String result = greetings.greet(null);
+
+        //then
+        assertEquals("Witaj moj przyjacielu", result);
+
+    }
 
 }
