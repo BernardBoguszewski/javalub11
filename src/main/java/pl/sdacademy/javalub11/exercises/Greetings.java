@@ -15,14 +15,26 @@ public class Greetings {
         if (name.equals(name.toUpperCase())) {
             return "WITAJ " + name + "!";
         }
-        if (commaCounting(name) == 1) {
-            String[] split = name.split(",");
-            return split[0] + " i " + split[1] + ", witajcie!";
+        if (commaCounting(name) == 2) {
+            return getTwoComma(name);
+
+        }if (commaCounting(name) == 1) {
+            return getOneComma(name);
         }
         if (name != null) {
             return "Witaj, " + name;
         }
         return name;
+    }
+
+    private String getTwoComma(String name) {
+        String[] split = name.split(",");
+        return split[0] + "," +split[1] + " i " + split[2] + ", witajcie!";
+    }
+
+    private String getOneComma(String name) {
+        String[] split = name.split(",");
+        return split[0] + " i " + split[1] + ", witajcie!";
     }
 
 
