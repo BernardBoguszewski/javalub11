@@ -3,10 +3,13 @@ package pl.sdacademy.javalub11.exercises;
 
 public class Greetings {
 
+    boolean isNumeric;
 
     public String greet(String name) {
         if (name == null) {
             return "Witaj, mój przyjacielu!";
+        } else if (isNumeric = name.chars().allMatch(Character::isDigit)) {
+            return "Z liczbami się nie witam";
         } else if (name == name.toUpperCase()) {
             return "WITAJ " + name + "!";
         } else if (name.contains(",")) {
@@ -29,8 +32,8 @@ public class Greetings {
                 String splitName2 = splitName[1];
                 return splitName1 + " i " + splitName2 + " witajcie!";
             }
-        } else {
-        }
-        return "Witaj, " + name;
+
+        } else
+            return "Witaj, " + name;
     }
 }
