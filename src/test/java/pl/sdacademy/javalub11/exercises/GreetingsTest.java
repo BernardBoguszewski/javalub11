@@ -65,7 +65,7 @@ public class GreetingsTest {
 
     //Zad1.5
     @Test
-    public void testShouldReturnThreeNames(){
+    public void testShouldReturnThreeNames() {
         //given
         Greetings greetings = new Greetings();
         String name = "Adam,Iza,Robert";
@@ -79,7 +79,7 @@ public class GreetingsTest {
 
     //zad1.6
     @Test
-    public void testShouldReturnFirstNameUpperCase(){
+    public void testShouldReturnFirstNameUpperCase() {
         //given
         Greetings greetings = new Greetings();
         String name = "ADAM, Iza, Robert";
@@ -92,7 +92,7 @@ public class GreetingsTest {
     }
 
     @Test
-    public void testShouldReturnSecondNameUpperCase(){
+    public void testShouldReturnSecondNameUpperCase() {
         //given
         Greetings greetings = new Greetings();
         String name = "Adam, IZA, Robert";
@@ -105,7 +105,7 @@ public class GreetingsTest {
     }
 
     @Test
-    public void testShouldReturnThirdNameUpperCase(){
+    public void testShouldReturnThirdNameUpperCase() {
         //given
         Greetings greetings = new Greetings();
         String name = "Adam, Iza, ROBERT";
