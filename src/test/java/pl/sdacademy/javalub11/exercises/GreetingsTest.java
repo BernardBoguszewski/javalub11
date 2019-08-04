@@ -49,7 +49,7 @@ public class GreetingsTest {
     }
 
     @Test
-    public void testShouldReturnGreetingForMoreThanOneName(){
+    public void testShouldReturnGreetingForMoreThanOneName() {
         //given
         Greetings greetings = new Greetings();
         String name = "Adam,Ewa";
