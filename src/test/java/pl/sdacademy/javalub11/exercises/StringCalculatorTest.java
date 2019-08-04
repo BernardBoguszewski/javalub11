@@ -45,10 +45,6 @@ public class StringCalculatorTest {
         assertEquals(0l, result);
     }
 
-    /*
-    Zaimplementuj możliwość obsługi wielu cyfr, np. Dla „2,3,5” metoda zwraca 10
-     */
-
     @Test
     public void testShouldCheckMethodAddCanCorrectlyAddsMultipleDigits(){
         //given
@@ -60,6 +56,19 @@ public class StringCalculatorTest {
 
         //then
         assertEquals(10L, result);
+    }
+
+    @Test
+    public void testShouldCheckMethodAddCanCorrectlyInterpretingNewLineCodeAndComaAsDigitsDelimiter(){
+        //given
+        String digitsToAdd = "3\n5,3";
+        StringCalculator stringCalculator = new StringCalculator();
+
+        //when
+        long result = stringCalculator.add(digitsToAdd);
+
+        //then
+        assertEquals(11L, result);
     }
 
 }
