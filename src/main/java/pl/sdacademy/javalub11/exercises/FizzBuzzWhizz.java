@@ -19,9 +19,12 @@ public class FizzBuzzWhizz {
     String result = "Nie dla zer!";
     if (digit > 0) {
       result = "";
-      if (digit % 3 == 0) result = "Fizz";
-      if (digit % 5 == 0) result += "Buzz";
-      if (isPrimary(digit)) result += "Whizz";
+      if (digit % 3 == 0)
+        result = "Fizz";
+      if (digit % 5 == 0)
+        result += "Buzz";
+      if (isPrimary(digit))
+        result += "Whizz";
     }
     return result;
   }
