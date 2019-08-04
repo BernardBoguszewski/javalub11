@@ -86,4 +86,17 @@ public class GreetingsTest {
         assertEquals("Adam i Iza, witajcie! WITAJ ROBERT!", result);
     }
 
+    @Test
+    public void testShouldReturnProperGreetingForNumber() { //wymaganie 7
+        //given
+        Greetings greetings = new Greetings();
+        String name = "12548";
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Z liczbami się nie witam.", result);
+    }
+
 }

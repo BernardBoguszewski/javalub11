@@ -7,6 +7,9 @@ public class Greetings {
         if (name == null) {
             return "Witaj, mój przyjcielu";
         }
+        if (name.matches(".*\\d.*")) {
+            return "Z liczbami się nie witam.";
+        }
         String tabName1[] = name.split(",");
 
         if (tabName1.length == 3 && tabName1[2].equals(tabName1[2].toUpperCase())) {
