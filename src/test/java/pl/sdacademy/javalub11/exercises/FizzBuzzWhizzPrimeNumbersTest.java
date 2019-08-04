@@ -13,6 +13,7 @@ public class FizzBuzzWhizzPrimeNumbersTest {
     private int digit;
     private String result;
     private String expected;
+    private FizzBuzzWhizz fizzBuzzWhizz = new FizzBuzzWhizz();
 
     @Parameterized.Parameters
     public static Collection data(){
@@ -21,16 +22,15 @@ public class FizzBuzzWhizzPrimeNumbersTest {
 
     public FizzBuzzWhizzPrimeNumbersTest(int digit, String expected) {
         //given
-        FizzBuzzWhizz fizzBuzzWhizz = new FizzBuzzWhizz();
         this.digit = digit;
         this.expected = expected;
-
-        //when
-        this.result = fizzBuzzWhizz.isPrime(digit);
     }
 
     @Test
     public void testShouldReturnSpecifiedStringsWhenDigitIsPrimeNumberWithTwoOptionsForDigitThreeAndFive() {
+        //when
+        this.result = fizzBuzzWhizz.isPrime(digit);
+
         //then
         Assert.assertEquals(expected, result);
     }

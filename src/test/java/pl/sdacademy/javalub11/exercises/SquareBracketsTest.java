@@ -13,6 +13,7 @@ public class SquareBracketsTest {
     private String brackets;
     private boolean expected;
     private boolean result;
+    private SquareBrackets squareBrackets = new SquareBrackets();
 
     @Parameterized.Parameters
     public static Collection data(){
@@ -21,16 +22,15 @@ public class SquareBracketsTest {
 
     public SquareBracketsTest(String brackets, boolean expected) {
         //given
-        SquareBrackets squareBrackets = new SquareBrackets();
         this.brackets = brackets;
         this.expected = expected;
-
-        //when
-        this.result = squareBrackets.isClosed(brackets);
     }
 
     @Test
     public void testShouldReturnSpecifiedStringsWhenDigitIsPrimeNumberWithTwoOptionsForDigitThreeAndFive() {
+        //when
+        this.result = squareBrackets.isClosed(brackets);
+
         //then
         Assert.assertEquals(expected, result);
     }
