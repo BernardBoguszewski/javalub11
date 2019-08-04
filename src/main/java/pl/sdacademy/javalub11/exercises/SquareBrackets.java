@@ -8,10 +8,14 @@ public class SquareBrackets {
             return false;
         }
 
-        if(!brackets.matches("[\\[\\]]+")){
+        if (!brackets.matches("[\\[\\]]+")) {
             return false;
         }
 
+        return !bracketsIsOpened(brackets);
+    }
+
+    private boolean bracketsIsOpened(String brackets) {
         char[] bracketsArray = brackets.toCharArray();
 
         int balanceBetweenBrackets = 0;
@@ -24,13 +28,13 @@ public class SquareBrackets {
             }
 
             if (balanceBetweenBrackets < 0) {
-                return false;
+                return true;
             }
 
             if (i == bracketsArray.length - 1 && balanceBetweenBrackets > 0) {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 }

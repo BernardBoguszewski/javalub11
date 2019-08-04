@@ -1,21 +1,37 @@
 package pl.sdacademy.javalub11.exercises;
 
+import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import java.util.Arrays;
+import java.util.Collection;
 
-import static org.junit.Assert.*;
-
+@RunWith(Parameterized.class)
 public class SquareBracketsTest {
 
-    @Test
-    public void testShouldReturnTrueIfSquareBracketsWillBeClosed(){
+    private String brackets;
+    private boolean expected;
+    private boolean result;
+
+    @Parameterized.Parameters
+    public static Collection data(){
+        return Arrays.asList(new Object[][]{{"[]", true}, {"[][]", true}, {"[[][]]", true}, {"][", false},{"][][", false}, {"[]][[]", false}});
+    }
+
+    public SquareBracketsTest(String brackets, boolean expected) {
         //given
         SquareBrackets squareBrackets = new SquareBrackets();
-        String brackets = "[[[]]][]";
+        this.brackets = brackets;
+        this.expected = expected;
 
         //when
-        boolean result = squareBrackets.isClosed(brackets);
+        this.result = squareBrackets.isClosed(brackets);
+    }
 
+    @Test
+    public void testShouldReturnSpecifiedStringsWhenDigitIsPrimeNumberWithTwoOptionsForDigitThreeAndFive() {
         //then
-        assertTrue(result);
+        Assert.assertEquals(expected, result);
     }
 }
