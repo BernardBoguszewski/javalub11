@@ -48,7 +48,7 @@ public class GreetingsTest {
     }
 
     @Test
-    public void testShouldReturnTwoNamesifGivenAfterComma(){
+    public void testShouldReturnTwoNamesifGivenAfterComma() {
         //given
         Greetings greetings = new Greetings();
         String name = "Adam,Iza";
@@ -57,6 +57,20 @@ public class GreetingsTest {
         String result = greetings.greet(name);
 
         //then
-        assertEquals("Witaj, Adam i Iza", result);
+        assertEquals("Adam i Iza witajcie!", result);
+    }
+
+    @Test
+    public void testShouldReturnMoreNameIfGivenAfterComma() {
+        //given
+        Greetings greetings = new Greetings();
+        String name = "Adam,Iza,Robert";
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam, Iza i Robert, witajcie!", result);
+
     }
 }
