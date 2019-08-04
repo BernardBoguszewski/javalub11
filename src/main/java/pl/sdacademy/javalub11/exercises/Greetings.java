@@ -1,6 +1,7 @@
 package pl.sdacademy.javalub11.exercises;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Greetings {
 
@@ -14,10 +15,17 @@ public class Greetings {
         return s.matches("[A-Z]+");
     }
 
+    private boolean ifStringContainDigit(String name) {
+        return name.matches(".*\\d.*");
+    }
+
     public String greet(String name) {
 
         if (name == null) {
             return "Witaj mój przyjacielu";
+        }
+        if (ifStringContainDigit(name)) {
+            return "Z liczbami się nie witam";
         }
         if (name.equals(name.toUpperCase())) {
             return "WITAJ " + name + "!";
@@ -37,7 +45,7 @@ public class Greetings {
 
     private String getTwoComma(String name) {
         int licz = 0;
-        ArrayList lower = new ArrayList();
+        List lower = new ArrayList();
         String[] split = name.split(",");
         for (int i = 0; i < split.length; i++) {
             String part = split[i];

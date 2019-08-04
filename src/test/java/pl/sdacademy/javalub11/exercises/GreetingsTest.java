@@ -47,10 +47,6 @@ public class GreetingsTest {
         assertEquals("WITAJ " + name + "!", result);
     }
 
-    private Greetings getGreetings() {
-        return new Greetings();
-    }
-
     @Test
     public void testShouldReturnStringWithTwoName() {
         //given
@@ -80,5 +76,16 @@ public class GreetingsTest {
         //then
         assertEquals("Adam i Iza, witajcie! WITAJ ROBERT!", result);
     }
+
+    @Test
+    public void testShouldReturnStringWhenDigit() {
+        //given
+        String name = "Adam22,Iza,ROBERT";
+        //when
+        String result = greetings.greet(name);
+        //then
+        assertEquals("Z liczbami się nie witam", result);
+    }
+
 
 }
