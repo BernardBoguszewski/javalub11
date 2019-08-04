@@ -3,7 +3,7 @@ package pl.sdacademy.javalub11.exercises;
 public class StringCalculator {
 
     public Long add(String digitsToAdd) {
-        if(digitsToAdd == null || !digitsToAdd.matches("[0123456789\\,]+") || digitsToAdd.isEmpty()){
+        if(digitsToAdd == null || !digitsToAdd.matches("[\\d\\,]+") || digitsToAdd.isEmpty()){
             return 0L;
         }
 
