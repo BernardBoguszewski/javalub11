@@ -65,7 +65,7 @@ public class GreetingsTest {
         //then
         assertEquals("Adam i Iza witajcie!", result);
     }
-
+//Wymaganie 5
     @Test
     public void testShouldReturnProperGreetingSplit2() {
         //given
@@ -77,6 +77,34 @@ public class GreetingsTest {
 
         //then
         assertEquals("Adam,Iza i Robert witajcie!", result);
+    }
+
+//wymaganie 6
+@Test
+public void testShouldReturnProperGreetingSplit3() {
+    //given
+    Greetings greetings = new Greetings();
+    String name = "Adam,Iza,ROBERT";
+
+    //when
+    String result = greetings.greet(name);
+
+    //then
+    assertEquals("Adam i Iza witajcie! Witaj ROBERT", result);
+}
+
+    //wymaganie 7
+    @Test
+    public void testShouldReturnProperGreetingLiczby() {
+        //given
+        Greetings greetings = new Greetings();
+        String name = "Adam,Iza,123456789";
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Z liczbami sie nie witam!", result);
     }
 
 }
