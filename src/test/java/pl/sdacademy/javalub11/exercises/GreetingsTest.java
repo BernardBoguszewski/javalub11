@@ -6,19 +6,29 @@ import static org.junit.Assert.*;
 
 public class GreetingsTest {
 
-    @Test
-    public void testShouldReturnProperGreeting() {
-        //given
-        Greetings greetings = new Greetings();
-        String name = "Adam";
+  @Test
+  public void testShouldReturnProperGreeting() {
+    // given
+    Greetings greetings = new Greetings();
+    String name = "Adam";
 
-        //when
-        String result = greetings.greet(name);
+    // when
+    String result = greetings.greet(name);
 
-        //then
-        assertEquals("Witaj, " + name, result);
+    // then
+    assertEquals("Witaj, " + name, result);
+  }
 
-    }
+  @Test
+  public void testForNullName() {
+    // given
+    Greetings greetings = new Greetings();
+    String name = null;
 
+    // when
+    String result = greetings.greet(name);
 
+    // then
+    assertEquals("Witaj, mój przyjacielu.", result);
+  }
 }
