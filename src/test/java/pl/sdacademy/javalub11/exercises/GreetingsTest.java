@@ -76,4 +76,44 @@ public class GreetingsTest {
         //then
         assertEquals("Adam, Iza i Robert, witajcie!", result);
     }
+
+    //zad1.6
+    @Test
+    public void testShouldReturnFirstNameUpperCase(){
+        //given
+        Greetings greetings = new Greetings();
+        String name = "ADAM, Iza, Robert";
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Iza i Robert, witajcie! WITAJ ADAM!", result);
+    }
+
+    @Test
+    public void testShouldReturnSecondNameUpperCase(){
+        //given
+        Greetings greetings = new Greetings();
+        String name = "Adam, IZA, Robert";
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam i Robert, witajcie! WITAJ IZA!", result);
+    }
+
+    @Test
+    public void testShouldReturnThirdNameUpperCase(){
+        //given
+        Greetings greetings = new Greetings();
+        String name = "Adam, Iza, ROBERT";
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam i Iza, witajcie! WITAJ ROBERT!", result);
+    }
 }

@@ -10,10 +10,18 @@ public class Greetings {
         } else if (name.contains(",")) {
             String splitTable[] = name.split(",");
             if (splitTable.length == 3) {
+
                 String tablica1 = splitTable[0];
                 String tablica2 = splitTable[1];
                 String tablica3 = splitTable[2];
-                return tablica1 + ", " + tablica2 + " i " + tablica3 + "," + " witajcie!";
+                if (tablica1 == tablica1.toUpperCase()) {
+                    return tablica2.trim() + " i" + tablica3 + ", witajcie!" + " WITAJ " + tablica1.toUpperCase() + "!";
+                } else if (tablica2 == tablica2.toUpperCase()) {
+                    return tablica1 + " i" + tablica3 + ", witajcie!" + " WITAJ" + tablica2.toUpperCase() + "!";
+                } else if (tablica3 == tablica3.toUpperCase()) {
+                    return tablica1 + " i" + tablica2 + ", witajcie!" + " WITAJ" + tablica3.toUpperCase() + "!";
+                } else
+                    return tablica1 + ", " + tablica2 + " i " + tablica3 + "," + " witajcie!";
             } else {
                 String tablica1 = splitTable[0];
                 String tablica2 = splitTable[1];
