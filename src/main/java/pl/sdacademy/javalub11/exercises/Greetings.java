@@ -1,5 +1,6 @@
 package pl.sdacademy.javalub11.exercises;
 
+
 public class Greetings {
 
 
@@ -14,6 +15,14 @@ public class Greetings {
                 String splitName1 = splitName[0];
                 String splitName2 = splitName[1];
                 String splitName3 = splitName[2];
+                if (splitName3 == splitName3.toUpperCase()) {
+                    return splitName1 + " i " + splitName2 + " witajcie! " + "WITAJ " + splitName3.toUpperCase();
+                } else if (splitName2 == splitName3.toUpperCase()) {
+                    return splitName1 + " i " + splitName3 + " witajcie! " + "WITAJ " + splitName2.toUpperCase();
+                } else if (splitName1 == splitName1.toUpperCase()) {
+                    return splitName3.trim() + " i " + splitName2 + " witajcie! " + "WITAJ " + splitName1.toUpperCase();
+                }
+
                 return splitName1 + ", " + splitName2 + " i " + splitName3 + ", witajcie!";
             } else {
                 String splitName1 = splitName[0];

@@ -73,4 +73,17 @@ public class GreetingsTest {
         assertEquals("Adam, Iza i Robert, witajcie!", result);
 
     }
+
+    @Test
+    public void testShouldReturnMoreNamesIfGivenAfterCommaInculdingCapitalLetters() {
+        //given
+        Greetings greetings = new Greetings();
+        String name = "Adam,Iza,ROBERT";
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam i Iza witajcie! WITAJ ROBERT", result);
+    }
 }
