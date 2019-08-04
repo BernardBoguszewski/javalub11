@@ -48,4 +48,17 @@ public class GreetingsTest {
 
     }
 
+    @Test
+    public void testShouldReturnGreetingForMoreThanOneName(){
+        //given
+        Greetings greetings = new Greetings();
+        String name = "Adam,Ewa";
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam i Ewa, witajcie!", result);
+    }
+
 }
