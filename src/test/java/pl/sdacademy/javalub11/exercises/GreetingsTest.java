@@ -20,7 +20,7 @@ public class GreetingsTest {
   }
 
   @Test
-  public void testForNullName() {
+  public void testShouldReturnProperGreetingForNullName() {
     // given
     Greetings greetings = new Greetings();
     String name = null;
@@ -31,4 +31,16 @@ public class GreetingsTest {
     // then
     assertEquals("Witaj, mój przyjacielu.", result);
   }
+    @Test
+    public void testShouldReturnUpperCaseGreeting() {
+        // given
+        Greetings greetings = new Greetings();
+        String name = "ADAM";
+
+        // when
+        String result = greetings.greet(name);
+
+        // then
+        assertEquals("WITAJ, " + name+"!", result);
+    }
 }
