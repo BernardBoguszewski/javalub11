@@ -31,16 +31,43 @@ public class GreetingsTest {
     // then
     assertEquals("Witaj, mój przyjacielu.", result);
   }
-    @Test
-    public void testShouldReturnUpperCaseGreeting() {
-        // given
-        Greetings greetings = new Greetings();
-        String name = "ADAM";
 
-        // when
-        String result = greetings.greet(name);
+  @Test
+  public void testShouldReturnUpperCaseGreeting() {
+    // given
+    Greetings greetings = new Greetings();
+    String name = "ADAM";
 
-        // then
-        assertEquals("WITAJ, " + name+"!", result);
-    }
+    // when
+    String result = greetings.greet(name);
+
+    // then
+    assertEquals("WITAJ, " + name + "!", result);
+  }
+
+  @Test
+  public void testShouldReturnGreetingForTwoNames() {
+    // given
+    Greetings greetings = new Greetings();
+    String name = "Ania,Adam";
+
+    // when
+    String result = greetings.greet(name);
+
+    // then
+    assertEquals("Ania i Adam, witajcie!", result);
+  }
+
+  @Test
+  public void testShouldReturnGreetingForThreeNames() {
+    // given
+    Greetings greetings = new Greetings();
+    String name = "Ania,Adam,Robert";
+
+    // when
+    String result = greetings.greet(name);
+
+    // then
+    assertEquals("Ania, Adam i Robert, witajcie!", result);
+  }
 }
