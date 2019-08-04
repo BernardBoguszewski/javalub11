@@ -91,7 +91,7 @@ public class GreetingsTest {
     public void testShouldReturnSpecialGreetingIfANumberIsGiven() {
         //given
         Greetings greetings = new Greetings();
-        String name = "6";
+        String name = "7";
 
         //when
         String result = greetings.greet(name);

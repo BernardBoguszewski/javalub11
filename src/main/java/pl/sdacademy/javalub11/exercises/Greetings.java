@@ -3,12 +3,12 @@ package pl.sdacademy.javalub11.exercises;
 
 public class Greetings {
 
-    boolean isNumeric;
+    private boolean isNumeric;
 
     public String greet(String name) {
         if (name == null) {
             return "Witaj, mój przyjacielu!";
-        } else if (isNumeric = name.chars().allMatch(Character::isDigit)) {
+        } else if (isNumeric = name.chars().anyMatch(Character::isDigit)) {
             return "Z liczbami się nie witam";
         } else if (name == name.toUpperCase()) {
             return "WITAJ " + name + "!";
