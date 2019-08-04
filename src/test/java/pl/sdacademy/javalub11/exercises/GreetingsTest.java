@@ -21,7 +21,7 @@ public class GreetingsTest {
     }
 
     @Test
-    public void testShouldReturnGreetingForNull(){
+    public void testShouldReturnGreetingForNull() {
         //given
         Greetings greetings = new Greetings();
         String name = null;
@@ -34,5 +34,18 @@ public class GreetingsTest {
 
     }
 
+    @Test
+    public void testShouldReturnGreetingToUppercase() {
+        //given
+        Greetings greetings = new Greetings();
+        String name = "EWA";
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("WITAJ, EWA", result);
+
+    }
 
 }
