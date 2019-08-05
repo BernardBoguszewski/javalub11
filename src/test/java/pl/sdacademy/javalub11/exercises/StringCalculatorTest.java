@@ -74,7 +74,7 @@ public class StringCalculatorTest {
     @Test
     public void testShouldCheckAddMethodCanCorrectlyExtractDelimiterFromInputStringAndUseIt(){
         //given
-        String digitsToAdd = "///\n3/5/7";
+        String digitsToAdd = "//;\n3;5;7";
         StringCalculator stringCalculator = new StringCalculator();
 
         //when
