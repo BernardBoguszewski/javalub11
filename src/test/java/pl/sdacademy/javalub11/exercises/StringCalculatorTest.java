@@ -71,4 +71,16 @@ public class StringCalculatorTest {
         assertEquals(11L, result);
     }
 
+    @Test
+    public void testShouldCheckAddMethodCanCorrectlyExtractDelimiterFromInputStringAndUseIt(){
+        //given
+        String digitsToAdd = "///\n3/5/7";
+        StringCalculator stringCalculator = new StringCalculator();
+
+        //when
+        long result = stringCalculator.add(digitsToAdd);
+
+        //then
+        assertEquals(15L, result);
+    }
 }
