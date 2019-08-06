@@ -1,0 +1,168 @@
+Kata:
+
+{counter:cnt-step}. Przywitanie
+
+Wymaganie 1
+
+Napisz metodę String greet(String name), która zwróci proste powitanie dla zmiennej.
+Przykład: gdy zmienna name = „Adam”, wtedy metoda zwraca „Witaj, Adam”.
+
+Wymaganie 2
+
+Zabezpiecz metodę przed nullami. Gdy w parametrze zostanie przekazany null, wtedy metoda
+powinna zwrócić „Witaj, mój przyjacielu”.
+
+Wymaganie 3
+
+Gdy imie zostanie wpisane wielkimi literami np.”ADAM”, wtedy metoda powinna zwrócić
+„WITAJ ADAM!”.
+
+Wymaganie 4
+
+Gdy zostaną podane dwa imiona po przecinku np. „Adam,Iza”, metoda ma zwrócić „Adam i Iza,
+witajcie!”.
+
+Wymaganie 5
+
+Gdy zostaną podane trzy imiona np. „Adam,Iza,Robert”, metoda ma zwrócić „Adam, Iza i Robert,
+witajcie!”.
+
+Wymaganie 6
+
+Gdy jedno z trzech imion będzie napisane wielkimi literami, np.”Adam, Iza, ROBERT”, wtedy
+metoda ma zwrócić „Adam i Iza, witajcie! WITAJ ROBERT!”.
+
+Wymaganie 7
+
+Jeżeli w zmiennej name znajdują się cyfry, metoda ma zwrócić „Z liczbami się nie witam.”.
+
+
+{counter:cnt-step}. Zamknięte nawiasy
+
+Dostajemy ciąg otwartych i zamkniętych nawiasów, np. „[[]][[]][[]”. Program ma za zadanie
+sprawdzić, czy wszystkie nawiasy zostały zamknięte i zwrócić true. W przeciwnym wypadku false.
+Dla pustego stringa
+
+[] true
+
+[][] true
+
+[[][]] true
+
+][ false
+
+][][ false
+
+[]][[] false
+
+
+{counter:cnt-step}. FizzBuzzWhizz
+
+Wymaganie 1
+Napisz metodę String fizzBuzzWhizz(int digit). Metoda zwraca „Nie dla zer!” dla zerowego
+parametru.
+
+Wymaganie 2
+Jeżeli liczba jest podzielna przez 3, metoda ma zwracać „Fizz”.
+
+Wymaganie 3
+Jeżeli liczba jest podzielna przez 5, metoda ma zwracać „Buzz”
+
+Wymaganie 4
+Jeżeli liczbą jest podzielna jednocześnie przez 3 i przez 5, metoda ma zwracać „FizzBuzz”
+
+Wymaganie 5
+Jeżeli liczba jest liczbą pierwszą metoda ma zwracać „Whizz”. Dla liczby 3 „FizzWhizz”, natomiast
+dla 5 „BuzzWhizz”.
+
+{counter:cnt-step}. Kalkulator Stringów
+
+Wymaganie 1
+
+Napisz metodę int add(String numbers), która będzie przeliczać wartości ukryte w stringu.
+Metoda przyjmuje w parametrze dwie cyfry oddzielone przecinkami i zwraca ich sumę.
+np. „3,5” zwraca 8.
+Gdy parametr zawiera pusty string lub null metoda zwraca 0.
+
+Wymaganie 2
+
+Zaimplementuj możliwość obsługi wielu cyfr, np. Dla „2,3,5” metoda zwraca 10.
+
+Wymaganie 3
+
+Istnieje możliwość oddzielania cyfr również znakami nowej linii, „3\n5,3” zwraca 11.
+
+Wymaganie 4
+
+Istnieje możliwość określenia separatora po wpisaniu „//” a następnie znaku nowej linii, czyli
+„//[separator]\n[cyfry_odzielone_wybranym_separatorem]”.
+Na przykład dla wejścia „//;\n3;5;7” metoda zwraca 15.
+
+Wymaganie 5
+
+Jeżeli zostanie przekazana liczba ujemna np.”3,-5”, kalkulator rzuca wyjątek „Liczby ujemne nie są
+obsługiwane”.
+
+Wymaganie 6
+
+Liczby większe od 1000 mają być ignorowane, czyli „1002,5” zwraca 7.
+
+Wymaganie 7
+
+Separatory mogą być dowolnej wielkości w podanym formacie
+„//[separator]\n[liczby]”, na przykład:
+
+dla „//[;;;]\n5;;;2;;;3” metoda zwraca 10.
+
+Wymaganie 8
+
+Zezwól na różne separatory w formacie
+„//[sep1][sep2]\n[liczby]”.
+Na przykład dla
+„//[*][%]\n3*5%6” metoda zwraca 14.
+
+Wymaganie 9
+
+Upewnij się, że można prowadzać wielokrotne separatory o długości większej niż jeden znak, np.
+„//[;;][%]\n5;;3%7”.
+
+{counter:cnt-step}. Kalkulator Czasu
+
+Napisz metodę calcWorkTime(String startTime, String endTime, String breakTime), która oblicza
+czas pracy z uwzględnieniem przerw.
+
+Czas jest podany w formacie HH:mm, czyli np. 12:30, 07:02.
+
+Zakładamy, że podane czasy są w ciągu jednej doby.
+
+Przykład: dla wejścia („08:42”, „16:20”, „00:30”) metoda zwraca „07:08”.
+
+
+{counter:cnt-step}. Liczby Rzymskie
+
+I - 1
+
+V - 5
+
+X - 10
+
+L - 50
+
+C - 100
+
+D - 500
+
+M - 1000
+
+Liczba rzymska -> Obliczenia  = Wynik
+
+MMVI  -> 1000 + 1000 + 5 + 1 = 2006 (tylko dodawanie)
+
+MCMXLIV -> 1000 + (1000 - 100) + (50 - 10) + (5 - 1) = 1944 (dodawanie i odejmowanie)
+
+Wymaganie
+
+Napisz metodę int romanToDecimal(String romanNumber), która przyjmuje w parametrze liczbę
+rzymską i zwraca jej dziesiętny odpowiednik. Pokryj testami różnorodne przypadki prawidłowych
+liczb rzymskich. Dodatkowo możesz napisać walidator, czy podany ciąg znaków jest poprawną
+liczbą rzymską.
